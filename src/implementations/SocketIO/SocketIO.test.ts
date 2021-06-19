@@ -61,10 +61,11 @@ describe('SocketIO implementation should...', () => {
     expect(true).toBeTruthy();
   });
   afterEach(async () => {
+    apiClient.cleanUp()
     await new Promise((resolve) => {
       httpServer.close(resolve);
     });
-    apiClient.cleanUp()
+   
   });
   // test('call/handle simple API request');
 });
